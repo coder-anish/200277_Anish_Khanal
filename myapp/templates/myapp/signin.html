@@ -1,0 +1,54 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+<div class="container">
+    <center><h2 style="margin-top: 70px; background-color: rgb(86, 86, 223);color: white">Welcome to Kathmandu Transit Bus Reservation</h2></center>
+        <div class="row">
+
+
+            <div class="row align-items-start mx-auto" style="margin-top: 70px"">
+                <div class="col">
+                <img src="https://cdn.abcotvs.com/dip/images/1307110_042416-wtvd-gotriangle-bus-generic-img.jpg?w=1600" height="250" width="500" alt="">
+                </div>
+                <div class="col">
+                    <h2>Log in</h2>
+
+                <form action="{% url 'signin' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group row">
+                        <label for="example-email-input" class="col-2 col-form-label">Username:</label>
+                        <div class="col-10">
+                            <input name='name' class="form-control mx-4" type="text" id="example-email-input">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-email-input" class="col-2 col-form-label">Password:</label>
+                        <div class="col-10">
+                            <input name='password' class="form-control mx-4" type="password">
+                        </div>
+                    </div>
+                    <div class="pull-right">
+                        <button type="Submit" class="btn btn-success float-right">Sign in</button>
+                    </div>
+
+                </form>
+                <p>{{error}}</p>
+                </div>
+              </div>
+
+
+
+<!-- 
+            <div class="col-sm-6 mx-auto" style="margin-top: 70px">
+                <div class="d-flex">
+                    <div>
+            </div>
+                <div>
+                
+            </div>
+            </div>
+            </div> -->
+        </div>
+
+    </div>
+
+{% endblock %}
